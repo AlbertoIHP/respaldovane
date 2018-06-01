@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ame-sol">
+<head>
+    <meta charset="UTF-8">
+    <title>América solidaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://placehold.it/100x100" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta name=“google-site-verification” content=“YxN7WGXBI_qwRaEFUbjSumxtQsDuGd1UcsXClGVGhXA” />
+    <link rel="icon" href="public/images/favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="public/css/fonts.css">
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/owl.theme.default.min.css"> 
+    <link rel="stylesheet" href="public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
+</head>
+<body>
+ 
+    <section id="main-slider" class="main-slider" ng-controller="whoAreYou">
+      <div class="bg-yellow"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+             
+            <img src="public/images/logo2.png" alt="">
+            <h3>Tú puedes cambiar esta historia, 
+              descubre tu papel en ella y comprométete 
+              a re-escribirla</h3>
+            <h5>Cuéntanos quién eres para comenzar</h5>
+              <form class="form-inline form-main" id="registro">
+                <div class="form-group">
+                  <label for="exampleInputName2"></label>
+                  <input ng-model="name" type="text" class="form-control" id="name" name="nombre" placeholder="Tu nombre y apellido">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail2"> </label>
+                  <input ng-model="email" type="email" class="form-control" id="email" name="email" placeholder="Tu e-mail">
+                </div>
+
+                <br>
+                <div class="form-cont">
+                    <button ng-click="send()" type="submit" class="btn-main">Continuar</button>
+                </div>
+              </form>
+              
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carta-section" ng-controller="myPart">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="common-box">
+              <h2>Mi papel en la vida de los niños de América</h2>
+              <form class="form-inline" id="send-testament">
+                <p>
+                  Yo, <input ng-model="contacto.text" type="text" name="text"> , mediante el presente
+                  documento, me comprometo a tomar un papel en la 
+                  historia de miles de niños de América y trabajar junto 
+                  a cientos de personas en 
+                </p>
+
+                
+                <div class="form-group">
+                 
+                  <select class="form-control" ng-model="contacto.opcion" >
+                    <option ng-repeat=" option in options" value="{{option.content}}">
+                      {{ option.content }}
+                    </option>
+                  </select>
+                </div>
+                
+
+                <p>
+                  Con este documento, protesto en contra de la indiferencia 
+                  e invito a todo quién sienta lo mismo, a cambiar estas 
+                  historias en América.
+                </p>
+
+                <div class="input-group">
+                  <input ng-model="contacto.name" type="text" name="text">
+                  <span> @</span>
+                  <input ng-model="contacto.email" type="text" name="text">
+                </div>
+
+                <p>Firma con tu E-mail</p>
+
+                <span class="span-1">(Las instrucciones llegarán a este correo)</span>
+
+                <div class="botones">
+                  <!-- Large button group -->
+                  <div class="btn-group">
+                    <button ng-click="send()" type="submit" class="btn btn-default btn-left">Enviar testamento</button>
+                  </div>
+                  
+                  <div class="btn-group">
+                    <button class="btn btn-default btn-lg dropdown-toggle btn-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Compartir <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <span class="facebook-share" data-js="facebook-share"><li>Compartir en Facebook</li></span>
+                      <span class="twitter-share" data-js="twitter-share"><li>Compartir en Twitter</li></span>
+                    </ul>
+                  </div>      
+
+                </div>
+              </form>
+              <span class="span-2">Cada vez que compartes, estás apoyando activamente nuestra causa.</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+       <img class="div-img" src="public/images/division.png" alt="">
+    </section>
+    
+    <section class="info-section" ng-controller="sendToAfriend">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>
+              Ya somos más de <span>4.567</span> 
+              personas que se han despojado de su indiferencia 
+              y que quieren eliminar la pobreza como herencia.
+            </h1>
+            <div >
+              <h5>¡Cuéntale a un amigo para que se sume!</h5>
+              <form class="form-inline" id="form-share">
+                <div class="form-group">
+                  <input ng-model="email" type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="email">
+                </div>
+                <button ng-click="send()" type="submit" class="btn btn-default">Enviar</button>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <footer>
+      <img src="public/images/logo.png" alt="">
+    </footer>
+    
+    <script src="public/js/jquery-3.1.1.min.js" integrity=""></script>
+    <script src="public/js/bootstrap.min.js" integrity=""></script>
+    <script src="public/js/imagesloaded.pkgd.min.js"></script>
+    <script src="public/js/owl.carousel.min.js"></script>
+    <script src="public/js/angular.js"></script> 
+    <script src="public/js/main.js" integrity=""></script>
+    <!-- END CHATBOT -->
+</body>
+</html>

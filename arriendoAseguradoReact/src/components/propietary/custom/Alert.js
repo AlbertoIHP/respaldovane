@@ -1,0 +1,23 @@
+import React from 'react';
+import { Card, CardHeader, CardActions } from 'material-ui/Card';
+import Avatar from 'material-ui/Avatar';
+import LightBulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
+import DollarIcon from 'material-ui/svg-icons/editor/attach-money';
+
+import HomeIcon from 'material-ui/svg-icons/action/home';
+import CodeIcon from 'material-ui/svg-icons/action/code';
+import FlatButton from 'material-ui/FlatButton';
+import { translate } from 'admin-on-rest';
+
+export default translate(({ style, translate, text, subtitle, link, link_text }) => (
+  <Card style={style}>
+    <CardHeader
+      title={text}
+      subtitle={subtitle}
+      avatar={<Avatar backgroundColor="#F03434" icon={<LightBulbIcon />} />}
+    />
+    <CardActions style={{ textAlign: 'right' }}>
+      <FlatButton label={link_text} icon={<DollarIcon />} href={link} />
+    </CardActions>
+  </Card>
+));

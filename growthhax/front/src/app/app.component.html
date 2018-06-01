@@ -1,0 +1,560 @@
+
+
+
+<div *ngIf="!isSpanish" >
+
+<div style="text-align: center">
+  <button type="button" class="btn btn-primary-outline" (click)="changeLanguage(true)">
+    <img src="https://cdn.countryflags.com/thumbs/spain/flag-round-250.png" style="height: 15px" />
+    Spanish
+  </button>  
+</div>
+
+  
+</div>
+
+
+<div *ngIf="isSpanish">
+  
+<div style="text-align: center">
+  <button type="button" class="btn btn-primary-outline" (click)="changeLanguage(false)">
+    <img src="https://cdn1.iconfinder.com/data/icons/rounded-flat-country-flag-collection-1/2000/us-01.png" style="height: 15px" />
+    Ingles
+  </button>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="!isSpanish" >
+      <mat-menu #notiMenu="matMenu">
+          <div *ngIf=" notifications.length === 0" >
+            There are no new notifications for you
+          </div>
+
+
+          <div *ngFor="let no of notifications" style="text-align: center">
+            <p routerLink="{{ no.link }}">
+              {{ no.content }}
+            </p>
+            <hr>
+          </div>
+
+      </mat-menu>
+
+
+
+<mat-toolbar color="primary" *ngIf="isLogged" >
+  <mat-toolbar-row >
+    <div class="container">
+      <img src="../assets/logo-2.png" alt="" class="logo" >
+      <span class="example-spacer"></span>
+
+      <!-- MENTOR (Role 4) has the permission to search users -->
+      <form class="example-form" *ngIf="currentUser.role === '4' " (keydown)="goToUserList($event)">
+
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Search user..." [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="toSearch" >
+          <mat-autocomplete #auto="matAutocomplete">
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.username" (click)="goSearch( state )">
+              <img style="vertical-align:middle;" aria-hidden src="{{state.picture}}" height="25" />
+              <span>{{ state.username }}</span> |
+              <small>Population: {{state.name}}</small>
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </form>
+
+
+      <!-- ENTERPRISE (Role 2) has the permission to search mentor -->
+      <form class="example-form" *ngIf="currentUser.role === '3' " (keydown)="goToUserList($event)">
+
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Search an mentor..." [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="toSearch">
+          <mat-autocomplete #auto="matAutocomplete" >
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.username" (click)="goSearch( state )" >
+              <img style="vertical-align:middle;" aria-hidden src="{{state.picture}}" height="25" />
+              <span>{{ state.username }}</span> |
+              <small>Name: {{state.name}} {{state.lastname}}</small>
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </form>
+
+
+      <!-- USER (Role 1) has the permission to search mentors -->
+      <form class="example-form" *ngIf="currentUser.role === '1' " (keydown)="goToUserList($event)">
+
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Search an mentor..." [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="toSearch">
+          <mat-autocomplete #auto="matAutocomplete">
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.username" (click)="goSearch( state )">
+              <img style="vertical-align:middle;" aria-hidden src="{{state.picture}}" height="25" />
+              <span>{{ state.username }}</span> |
+              <small>Name: {{state.name}} {{state.lastname}}</small>
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </form>
+
+      <span class="example-spacer"></span>
+
+
+
+      <button mat-icon-button [matMenuTriggerFor]="notiMenu" *ngIf="currentUser.role === '1' || currentUser.role === '4'"  >
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+
+      <!-- USER (Role 1) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" *ngIf="currentUser.role === '1'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- MENTOR (Role 4) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="mentorMenu" *ngIf="currentUser.role === '4'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- MENTOR (Role 2) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="adminMenu" *ngIf="currentUser.role === '2'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- ENTERPRISE (Role 3) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="enterpriseMenu" *ngIf="currentUser.role === '3'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+<router-outlet>
+
+
+</router-outlet>
+
+<mat-menu #userMenu="matMenu" >
+  <button mat-menu-item routerLink="/profile" (click)="emitProfilePressed()">
+    <mat-icon>person</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Edit Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/mentors">
+    <mat-icon>supervisor_account</mat-icon>
+    <span>My Mentors</span>
+  </button>
+  <button mat-menu-item routerLink="/meetings">
+    <mat-icon>people</mat-icon>
+    <span>My Meetings</span>
+  </button>
+  <button mat-menu-item routerLink="/projects">
+    <mat-icon>library_books</mat-icon>
+    <span>My Projects</span>
+  </button>
+  <button mat-menu-item routerLink="/chats">
+    <mat-icon>chat</mat-icon>
+    <span>Chat</span>
+  </button>
+
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>
+
+<mat-menu #mentorMenu="matMenu" >
+  <button mat-menu-item routerLink="/profile" (click)="emitProfilePressed()">
+    <mat-icon>person</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Edit Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/pupils" >
+    <mat-icon>supervisor_account</mat-icon>
+    <span>My Pupils</span>
+  </button>
+  <button mat-menu-item routerLink="/meetings">
+    <mat-icon>people</mat-icon>
+    <span>My Meetings</span>
+  </button>
+  <button mat-menu-item routerLink="/experiences" >
+    <mat-icon>library_books</mat-icon>
+    <span>My Experiences</span>
+  </button>
+  <button mat-menu-item routerLink="/chats">
+    <mat-icon>chat</mat-icon>
+    <span>Chat</span>
+  </button>
+
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>
+
+<mat-menu #adminMenu="matMenu" >
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Edit Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/calendars" >
+    <mat-icon>today</mat-icon>
+    <span>Calendars</span>
+  </button>
+  <button mat-menu-item routerLink="/pendings" >
+    <mat-icon>person_outline</mat-icon>
+    <span>Pending Users</span>
+  </button>
+  <button mat-menu-item routerLink="/distribution" >
+    <mat-icon>view_list</mat-icon>
+    <span>Distribution List</span>
+  </button>
+  <button mat-menu-item routerLink="/massiveload" >
+    <mat-icon>backup</mat-icon>
+    <span>Upload File</span>
+  </button>
+  <button mat-menu-item routerLink="/usersmaintainer" >
+    <mat-icon>backup</mat-icon>
+    <span>Administration of users</span>
+  </button>
+
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>
+
+
+<mat-menu #enterpriseMenu="matMenu" >
+  <button mat-menu-item routerLink="/profile" (click)="emitProfilePressed()">
+    <mat-icon>person</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/workers" >
+    <i class="fa fa-users"></i>
+    <span>My Workers</span>
+  </button>
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Edit Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/mentors">
+    <mat-icon>supervisor_account</mat-icon>
+    <span>My Mentors</span>
+  </button>
+  <button mat-menu-item routerLink="/meetings">
+    <mat-icon>people</mat-icon>
+    <span>My Meetings</span>
+  </button>
+  <button mat-menu-item routerLink="/chats">
+    <mat-icon>chat</mat-icon>
+    <span>Chat</span>
+  </button>
+  <button mat-menu-item routerLink="/calendars" >
+    <mat-icon>today</mat-icon>
+    <span>Calendars</span>
+  </button>
+  <button mat-menu-item routerLink="/distribution" >
+    <mat-icon>view_list</mat-icon>
+    <span>Distribution List</span>
+  </button>
+  <button mat-menu-item routerLink="/massiveload" >
+    <mat-icon>backup</mat-icon>
+    <span>Upload File</span>
+  </button>
+  
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>  
+</div>
+
+
+
+
+<div *ngIf="isSpanish">
+  
+      <mat-menu #notiMenu="matMenu">
+          <div *ngIf=" notifications.length === 0" >
+            No hay nuevas notificaciones para ti
+          </div>
+
+
+          <div *ngFor="let no of notifications" style="text-align: center">
+            <p routerLink="{{ no.link }}">
+              {{ no.content }}
+            </p>
+            <hr>
+          </div>
+
+      </mat-menu>
+
+
+
+<mat-toolbar color="primary" *ngIf="isLogged" >
+  <mat-toolbar-row >
+    <div class="container">
+      <img src="../assets/logo-2.png" alt="" class="logo" >
+      <span class="example-spacer"></span>
+
+      <!-- MENTOR (Role 4) has the permission to search users -->
+      <form class="example-form" *ngIf="currentUser.role === '4' " (keydown)="goToUserList($event)">
+
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Search user..." [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="toSearch" >
+          <mat-autocomplete #auto="matAutocomplete">
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.username" (click)="goSearch( state )">
+              <img style="vertical-align:middle;" aria-hidden src="{{state.picture}}" height="25" />
+              <span>{{ state.username }}</span> |
+              <small>Población: {{state.name}}</small>
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </form>
+
+
+      <!-- ENTERPRISE (Role 2) has the permission to search mentor -->
+      <form class="example-form" *ngIf="currentUser.role === '3' " (keydown)="goToUserList($event)">
+
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Search an mentor..." [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="toSearch">
+          <mat-autocomplete #auto="matAutocomplete" >
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.username" (click)="goSearch( state )" >
+              <img style="vertical-align:middle;" aria-hidden src="{{state.picture}}" height="25" />
+              <span>{{ state.username }}</span> |
+              <small>Nombre: {{state.name}} {{state.lastname}}</small>
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </form>
+
+
+      <!-- USER (Role 1) has the permission to search mentors -->
+      <form class="example-form" *ngIf="currentUser.role === '1' " (keydown)="goToUserList($event)">
+
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Search an mentor..." [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="toSearch">
+          <mat-autocomplete #auto="matAutocomplete">
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.username" (click)="goSearch( state )">
+              <img style="vertical-align:middle;" aria-hidden src="{{state.picture}}" height="25" />
+              <span>{{ state.username }}</span> |
+              <small>Nombre: {{state.name}} {{state.lastname}}</small>
+            </mat-option>
+
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </form>
+
+      <span class="example-spacer"></span>
+
+
+
+      <button mat-icon-button [matMenuTriggerFor]="notiMenu" *ngIf="currentUser.role === '1' || currentUser.role === '4'"  >
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+
+      <!-- USER (Role 1) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" *ngIf="currentUser.role === '1'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- MENTOR (Role 4) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="mentorMenu" *ngIf="currentUser.role === '4'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- MENTOR (Role 2) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="adminMenu" *ngIf="currentUser.role === '2'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- ENTERPRISE (Role 3) has the permission to show its functionalities -->
+      <button mat-icon-button [matMenuTriggerFor]="enterpriseMenu" *ngIf="currentUser.role === '3'">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+<router-outlet>
+
+
+</router-outlet>
+
+<mat-menu #userMenu="matMenu" >
+  <button mat-menu-item routerLink="/profile" (click)="emitProfilePressed()">
+    <mat-icon>person</mat-icon>
+    <span>Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Editar Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/mentors">
+    <mat-icon>supervisor_account</mat-icon>
+    <span>Mis Mentores</span>
+  </button>
+  <button mat-menu-item routerLink="/meetings">
+    <mat-icon>people</mat-icon>
+    <span>Mis Reuniones</span>
+  </button>
+  <button mat-menu-item routerLink="/projects">
+    <mat-icon>library_books</mat-icon>
+    <span>Mis Proyectos</span>
+  </button>
+  <button mat-menu-item routerLink="/chats">
+    <mat-icon>chat</mat-icon>
+    <span>Mensajería</span>
+  </button>
+
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Cerrar Sesión Out</span>
+  </button>
+</mat-menu>
+
+<mat-menu #mentorMenu="matMenu" >
+  <button mat-menu-item routerLink="/profile" (click)="emitProfilePressed()">
+    <mat-icon>person</mat-icon>
+    <span>Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Editar Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/pupils" >
+    <mat-icon>supervisor_account</mat-icon>
+    <span>Mis Mentorados</span>
+  </button>
+  <button mat-menu-item routerLink="/meetings">
+    <mat-icon>people</mat-icon>
+    <span>Mis Reuniones</span>
+  </button>
+  <button mat-menu-item routerLink="/experiences" >
+    <mat-icon>library_books</mat-icon>
+    <span>Mis Experiencias</span>
+  </button>
+  <button mat-menu-item routerLink="/chats">
+    <mat-icon>chat</mat-icon>
+    <span>Mensajería</span>
+  </button>
+
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+</mat-menu>
+
+<mat-menu #adminMenu="matMenu" >
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Editar Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/calendars" >
+    <mat-icon>today</mat-icon>
+    <span>Calendarios</span>
+  </button>
+  <button mat-menu-item routerLink="/pendings" >
+    <mat-icon>person_outline</mat-icon>
+    <span>Usuarios Pendientes</span>
+  </button>
+  <button mat-menu-item routerLink="/distribution" >
+    <mat-icon>view_list</mat-icon>
+    <span>Listas de Distribución</span>
+  </button>
+  <button mat-menu-item routerLink="/massiveload" >
+    <mat-icon>backup</mat-icon>
+    <span>Subir Usuarios Masivamente</span>
+  </button>
+
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+</mat-menu>
+
+
+<mat-menu #enterpriseMenu="matMenu" >
+  <button mat-menu-item routerLink="/profile" (click)="emitProfilePressed()">
+    <mat-icon>person</mat-icon>
+    <span>Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/workers" >
+    <i class="fa fa-users"></i>
+    <span>Mis Empleados</span>
+  </button>
+  <button mat-menu-item routerLink="/editprofile" >
+    <mat-icon>edit</mat-icon>
+    <span>Editar Perfil</span>
+  </button>
+  <button mat-menu-item routerLink="/mentors">
+    <mat-icon>supervisor_account</mat-icon>
+    <span>Mis Mentores</span>
+  </button>
+  <button mat-menu-item routerLink="/meetings">
+    <mat-icon>people</mat-icon>
+    <span>Mis Reuniones</span>
+  </button>
+  <button mat-menu-item routerLink="/chats">
+    <mat-icon>chat</mat-icon>
+    <span>Mensajería</span>
+  </button>
+  <button mat-menu-item (click)="logout()"  >
+    <mat-icon>arrow_back</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+</mat-menu>
+
+</div>
+

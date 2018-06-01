@@ -1,0 +1,33 @@
+{
+  "name": "arriendo-seguro-js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "admin-on-rest": "^1.4.1",
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
+    "file-base64": "^1.0.0",
+    "google-map-react": "^0.34.0",
+    "moment": "^2.22.1",
+    "nuka-carousel": "^4.2.1",
+    "react": "^16.4.0",
+    "react-datepicker": "^1.5.0",
+    "react-dates": "^16.7.0",
+    "react-datetime": "^2.14.0",
+    "react-dom": "^16.4.0",
+    "react-dropzone": "^4.2.10",
+    "react-modal": "^3.4.4",
+    "react-native-eventemitter": "0.0.1",
+    "react-number-format": "^3.3.4",
+    "react-places-autocomplete": "^6.1.3",
+    "react-router": "^3.2.1",
+    "react-scripts": "^1.1.4",
+    "react-transition-group": "^1.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,456 @@
+@media(max-width: 1366px){
+	.only-mobile{
+		display: none;
+	}
+	.only-desktop {
+		display: block;
+	}
+	.main-slider{
+		max-height: 680px;
+	}
+	.carta-section .botones{
+		display: flex;
+	}
+	
+}
+@media(max-width: 1321px){
+	.only-mobile{
+		display: none;
+	}
+	.only-desktop {
+		display: block;
+	}
+	.main-slider{
+		max-height: 680px;
+	}
+	
+	
+}
+/*@media(max-width: 1980px){
+	.only-mobile{
+		display: none;
+	}
+	.only-desktop {
+		display: block;
+	}
+	.main-slider{
+		max-height: 680px;
+	}
+	.carta-section .botones{
+		display: inherit;
+	}
+	.info-section{
+		height: 76vh;
+	}
+	
+}*/
+
+@media (max-width: 1024px){
+	.main-slider {
+    	height: 84vh;
+	}
+	.div-img{
+		left: 25em;
+	}
+}
+
+@media (max-width: 991px){
+	.only-mobile {
+		display: block;
+	}
+
+	.only-desktop {
+		display: none;
+	}
+}
+
+@media (max-width: 900px){
+	.main-slider {
+    	height: 166vh;
+	}
+
+	.carta-section p {
+    	white-space: pre-line;
+	}
+	.carta-section .btn-letter{
+		font-size: 22.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 3em 6em;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: 1.1em;
+	}
+	.div-img {
+    	left: 10.5em;
+    	width: 58%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 98vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}
+}
+
+@media (max-width: 812px){
+	.main-slider.main-slider-2 {
+    	height: 122vh;
+	}
+	.form-main{
+		display: inline;
+	}
+	.form-main .form-group{
+		margin-right: 1em;
+	}
+}
+
+@media (max-width: 800px){
+	.main-slider {
+    	height: 60vh;
+	}
+	.info-section {
+    	height: 38vh;
+	}
+
+}
+
+@media (max-width: 767px){
+	.main-slider {
+    	height: 166vh;
+	}
+
+	.carta-section p {
+    	white-space: pre-line;
+	}
+	.carta-section .btn-letter{
+		font-size: 22.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 3em 6em;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: 1.1em;
+	}
+	.div-img {
+    	left: 10.5em;
+    	width: 58%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 98vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}
+	.main-slider .form-group{
+		display: inline-block;
+	}
+	.form-main{
+		display: block;
+	}
+}
+
+@media (max-width: 736px){
+	.main-slider.main-slider-3{
+		height: 100vh;
+	}
+	.main-slide .form-main{
+		display: inline-flex;
+	}
+	.main-slide .form-group{
+		margin-right: 1em;
+	}
+	.info-section .form-inline{
+		height: 40px;
+	}
+}
+
+@media (max-width: 667px){
+	.main-slider {
+    	height: 192vh;
+	}
+	.carta-section p {
+    	white-space: initial;
+	}
+	.carta-section .btn-letter{
+		font-size: 22.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 1em 6em;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: 1.1em;
+	}
+	.div-img {
+    	left: 9em;
+    	width: 58%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 147vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}
+	.info-section .form-inline{
+		display: inline-flex;
+		height: 40px;
+	}
+}
+
+@media (max-width: 640px){
+	.main-slider {
+    	height: 192vh;
+	}
+	.carta-section p {
+    	white-space: initial;
+	}
+	.carta-section .btn-letter{
+		font-size: 22.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 1em 6em;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: 1.1em;
+	}
+	.div-img {
+    	left: 8.5em;
+    	width: 58%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 147vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}	
+}
+
+@media (max-width: 600px){
+	.main-slider {
+    	height: 192vh;
+	}
+	.carta-section p {
+    	white-space: initial;
+	}
+	.carta-section .btn-letter{
+		font-size: 22.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .botones{
+		display: inline-flex;
+	}
+	.carta-section .common-box {
+	    padding: 3em 1em 6em;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: 1.1em;
+	}
+	.div-img {
+    	left: 8.5em;
+    	width: 58%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 147vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}	
+	
+}
+
+@media (max-width: 450px){
+	.main-slider {
+    	height: 85vh;
+	}
+	.carta-section p {
+    	white-space: initial;
+	}
+	.carta-section .btn-letter{
+		font-size: 18.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 1em 6em;
+	}
+	.carta-section .botones{
+		display: inherit;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: .7em;
+	}
+	.div-img {
+    	left: 6.5em;
+    	width: 58%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 70vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}	
+}
+
+@media (max-width: 375px){
+	.main-slider {
+    	height: 95vh;
+	}
+	.carta-section p {
+    	white-space: initial;
+	}
+	.carta-section .btn-letter{
+		font-size: 15.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 1em 6em;
+	}
+	.carta-section .btn-left{
+		padding: 1em;
+		font-size: 1.15em;
+	}
+	.carta-section .btn-right{
+		padding: .87em 3em;
+		font-size: 16px;
+	}
+	.carta-section .input-group input {
+    	font-size: .6em;
+	}
+	.div-img {
+    	left: 3.5em;
+    	width: 70%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 85vh;
+	}
+	.form-main{
+		display: block;
+	}
+
+	.facebook-share, .twitter-share{
+		padding: 1em;
+	}
+}
+
+@media (max-width: 320px){
+	.main-slider {
+    	height: 112vh;
+	}
+	.carta-section p {
+    	white-space: initial;
+	}
+	.carta-section .btn-letter{
+		font-size: 13.5px;
+	}
+	.carta-section .input-group input{
+		font-size: 6em;
+	}
+	.carta-section .btn-group {
+    	display: inline-block;
+    	margin-bottom: 1em;
+	}
+	.carta-section .common-box {
+	    padding: 3em 1em 6em;
+	}
+	.carta-section p {
+    	font-size: 1.5em;
+    	line-height: 2em;
+	}
+	.carta-section .input-group input {
+    	font-size: .5em;
+	}
+	.div-img {
+    	left: 3.5em;
+    	width: 70%;
+    	top: 1em;
+	}
+	.info-section{
+		height: 108vh;
+	}
+	.info-section h1 {
+    	line-height: 1.3em;
+    	font-size: 30px;
+	}
+}

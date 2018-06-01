@@ -1,0 +1,573 @@
+@media(max-width: 1980px){
+	.only-mobile{
+		display: none;
+	}
+	.only-desktop {
+		display: block;
+	}
+	.main-slider{
+		max-height: 680px;
+	}
+	
+}
+@media (max-width: 1200px){
+	.nav>li>a{
+		padding-left: 13px;
+		padding-right: 13px;
+	}
+	header .navbar-default .navbar-nav>li>a {
+	    padding-right: 8px;
+	    padding-left: 8px;
+	    font-size: 12px;
+	}
+	.main-slider {
+    	max-height: inherit;
+	}
+	.bg-contact .project figcaption{
+		width: 100%;
+	}
+	.main-slider .text.text-2 h2{
+		width: 100%;
+		font-size: 36px;
+	}
+}
+@media (max-width: 1024px){
+	.main-slider .text h1{
+		font-size: 40px;
+	}
+	header .navbar-default .navbar-nav>li>a{
+		padding-right: 12px;
+		padding-left: 12px;
+		font-size:10px;
+	}
+	.navbar-default h4{
+		font-size: 12px;
+	}
+	.navbar-brand>img{
+		height: 30px;
+	}
+	p{
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.bg-contact .project figcaption{
+		width: 100%;
+	}
+	
+	.main-slider .text.text-2 h2{
+		width: 100%;
+		font-size: 36px;
+	}
+	.main-slider .text.text-2 h4.tag{
+		margin-bottom: 20px;
+	}
+}
+@media (max-width: 991px){
+	.only-mobile {
+		display: block;
+	}
+
+	.only-desktop {
+		display: none;
+	}
+	.navbar-brand>img{
+		height: 26px;
+	}
+	.main-slider .text.text-2 h4{
+		margin-bottom:10px;
+	}
+	.main-slider .text.text-3 h2{
+		width: 100%;
+	}
+	.main-slider .text.text-3 p{
+		padding-top: 10px;
+		font-size: 14px;
+	}
+	.contactanos ul{
+		margin-top: 30px;
+	}
+	.main-slider .text h1{
+		font-size: 45px;
+		margin-bottom: 5%;
+	}
+	.main-slider .text{
+		padding:  100px 0px 0px;
+	}
+	.main-slider .text.text-2 h2{
+		width: 100%;
+	}
+	.main-slider .text.text-2 p{
+		padding-top: 0px;
+	}
+	.motivos .bg-gray{
+		margin-bottom: 20px;
+	}
+	.border-left{
+		border-right: 0px;
+	}
+	.main-slider .cont-login{
+		display: none;
+	}
+	.sucursales .section-title{
+		padding-top: 0px;
+		padding-bottom: 20px;
+		font-size: 32px;
+	}
+	.information .detail-list li{
+		font-size: 22px;
+	}
+	.somos-cchc .text h4{
+		margin-bottom: 0px;
+		font-size: 28px;
+		margin-top: 0px;
+	}
+	.somos-cchc .text h1{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-size: 32px;
+	}
+	.main-slider.productos-cont .text.text-2 p{
+		padding-top: 10px;
+	}
+	header .navbar-default .navbar-nav>li>a {
+	    padding-right: 7px;
+	    padding-left: 7px;
+	    font-size: 11px;
+	}
+	.products .project figure{
+		height: 400px
+	}
+	.seguro-salud{
+		height: 470px;
+	}
+	.main-slider .text.text-2 h4.tag{
+		margin-top: 20px;
+	}
+	.main-slider .text.text-2 h2{
+		margin-top: 0px;
+	}
+	.main-slider.productos-cont .text.text-2 p{
+		font-size: 14px;
+		line-height: 17px;
+	}
+	.bg-contact .project .content-hover{
+		width: 70%;
+	}
+}
+@media (max-width: 900px){
+	.main-slider .text.text-2 h4.tag{
+		margin-bottom: 0px;
+	}
+	.navbar-brand>img{
+		height: 30px;
+	}
+	header .navbar-default .navbar-nav>li>a {
+	    padding-right: 8px;
+	    padding-left: 8px;
+	    font-size: 10px;
+	}
+	.main-slider .text.text-2 h2{
+		font-size: 38px;
+	}
+	.navbar-brand>img{
+		height: 28px;
+	}
+	.main-slider .text.text-2 p{
+		font-size: 15px;
+		line-height: 20px;
+	}
+	.main-slider.productos-cont .text.text-2 p{
+		padding-top: 20px;
+	}
+	.project figure img{
+		width: 180%;
+	}
+	.bg-contact .project figure .project-category{
+		width: 80%;
+		bottom: 25px;
+	}
+	.main-slider .text h1 {
+	    font-size: 38px;
+	    margin-bottom: 5%;
+	}
+	.productos-cont.preguntas-fre .text.text-2 h2{
+		text-align: center;
+	}
+	.about img{
+		margin-bottom: 20px;
+	}
+
+}
+@media (max-width: 800px){
+	.main-slider .text h1, .main-slider .text p{
+		width: 100%;
+	}
+	.bg-contact .project .content-hover{
+		width: 85%;;
+	}
+	footer h6 {
+		text-align: center;
+		font-size: 12px;
+	}
+
+	footer {
+		text-align: center;
+	}
+	footer ul li{
+		margin-right: 0px;
+	}
+	.main-slider{
+		background-size: cover
+	}
+	.type-hotels{
+		background-size: 200%;
+	}
+
+}
+@media (max-width: 767px){
+	footer .top ul li{
+		display: block
+	}
+	.navbar-nav .open .dropdown-menu{
+		text-align: center;
+	}
+	header .navbar-default .navbar-right{
+		margin-top: 0px;
+	}
+	.nav-tabs>li{
+		width: 100%;
+		text-align: center;
+	}
+	.bg-contact .project figure .project-category{
+		width: 95%;
+	}
+	.bg-orange ul li{
+		width: 32%;
+	}
+	.bg-orange ul li a{
+		font-size: 20px;
+	}
+	.main-slider .text.text-2 h4{
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.productos-cont{
+		height: 800px;
+	}
+	.main-slider .text.text-2 h2{
+		font-size: 35px;
+	}
+	.main-slider .text.text-2 .btn-solicita.btn-small {
+	    font-size: 16px;
+	    width: 150px;
+	    height: 60px;
+	    line-height: 52px;
+	    margin-top: 20px;
+	    position: relative;
+	}
+	.main-slider.productos-cont .text.text-2 p{
+		padding-top: 20px;
+	}
+	.navbar-brand>img{
+		height: 38px;
+	}
+	.sucursales .img-responsive{
+		margin-top: 20px;
+		width: 100%;
+	}
+	header .navbar-default .navbar-nav>li>a{
+		font-size: 14px;
+	}
+	header .navbar-default .navbar-right{
+		text-align: center;
+	}
+	.navbar-default .navbar-collapse{
+		background: #fff;
+		border: 0px;
+		margin: 0px;
+		position: relative;
+	    margin-left: -15px;
+	    margin-right: -15px;
+	    margin-top: 15px;
+	}
+	header .navbar-default .navbar-toggle.collapsed .icon-bar{
+
+	}
+	header .navbar-default.black-nav .navbar-toggle.collapsed{
+		background: #000
+	}
+	.navbar-default.black-nav .navbar-collapse{
+		background: #000;
+	}
+	header .navbar-default .navbar-nav>li>a{
+		color: #696969;
+	}
+	header .navbar-default .navbar-nav .especial-dark.block{
+		width: 98%;
+    	margin: 8px auto 0px;
+	}
+	.main-slider img {
+	    width: 200%;
+	    max-width: inherit;
+	}
+	footer .logo {
+	    text-align: right;
+	    margin-bottom: 40px;
+	    text-align: center;
+	}
+	.navbar-default.black-nav .navbar-nav .open .dropdown-menu>li>a{
+		color: #fff
+	}
+}
+@media (max-width: 600px){
+	.detail-apart{
+		background-size: 200%;
+	}
+	.main-slider.productos-cont .text.text-2 p{
+		padding-top: 0px;
+		font-size: 13px;
+	}
+	.productos-cont{
+		height: 700px;
+	}
+	.main-slider .text.text-2 h4.tag{
+		margin-bottom: 15px;
+	}
+	.main-slider img {
+	    width: 250%;
+	    max-width: inherit;
+	}
+	.seguro-salud{
+		height: inherit;
+	}
+	
+	.information ul{
+		padding-left: 20px;
+	}
+	#myLogin .cont-login {
+	    width: 65%;
+	}
+}
+@media (max-width: 450px){
+	.detail-apart .bajada{
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+	footer .top{
+		margin-bottom: 20px;
+	}
+	.products .project figure{
+		pointer-events: none;
+	}
+	#slideModal .modal-dialog{
+		width: 95%;
+	}
+	.main-slider .text.text-2 h4{
+		margin-bottom:15px;
+	}
+	.productos-cont.preguntas-fre .text.text-2 h2{
+		font-size:24px;
+	}
+	.main-slider.productos-cont .text.text-2 p{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.productos-cont{
+		height: 900px
+	}
+	.main-slider .text.text-3 h2{
+		margin-top: 0px;
+		font-size: 28px;
+	}
+	.detail-apart .item{
+		padding: 0px;
+	}
+	.main-slider .text.text-2 .btn-solicita{
+		margin-top: 20px;
+		font-size: 18px;
+		width: 170px;
+		height: 68px;
+		line-height: 58px;
+	}
+	.main-slider .text.text-2 h2{
+		margin-top:0px;
+		font-size: 22px;
+	}
+	.main-slider .text.text-2 p{
+		font-size: 12px;
+	}
+	.main-slider .text{
+		padding: 150px 20px 0px;
+	}
+	h2.section-title, .video h2, .motivos .bg-gray h2{
+		font-size: 26px;
+		line-height: 30px;
+		padding: 40px 0px;
+	}
+	.main-slider .text h1{
+		width: 100%;
+	    margin: 0px 0px 30px 0px;
+	    font-size: 30px;
+	    line-height: 34px;
+	}
+	
+	footer .redes{
+		margin-bottom: 30px;
+	}
+	.contact-footer{
+		padding-top: 20px;
+	}
+	footer .contact li a{
+		font-size: 12px;
+	}
+	.top-footer ul li a.main{
+		font-size: 12px;
+	}
+	#myModalForm .modal-dialog{
+		width: 95%;
+	}
+	.information .detail-list li{
+		font-size: 20px;
+	}
+	.information .detail ul{
+		padding-left: 15px;
+	}
+	.project figure img{
+		width: 200%;
+	}
+	.info-corp .project figure .project-zoom  p{
+		padding: 0px;
+	}
+	.bg-orange ul li a{
+		font-size: 18px;
+	}
+	.main-slider .text.text-2 h4.tag {
+	    margin-bottom: 10px;
+	    height: 40px;
+	    font-size: 16px;
+	    line-height: 20px;
+	}
+	h1{
+		font-size: 26px;
+	}
+	.main-slider .text.text-3{
+		padding-top: 100px;
+	}
+	.detalle .bg-ubuntu .media{
+		width: 290px;
+	}
+	.modal.in .modal-dialog{
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+@media (max-width: 375px){
+	.type-hotels {
+		background-size: 250%;
+	}
+	.information.preguntas .detail-list{
+		padding-left: 0px;
+	}
+	.information .detail ul li, .information  ul li{
+		margin-bottom:15px;
+	}
+	.main-slider .text.text-2 h4{
+		font-size: 18px;
+	}
+	.productos-cont{
+		height: 950px;
+	}
+	.tab-pane .media .media-left{
+		display: block
+	}
+	.bg-orange ul li a{
+		font-size: 16px;
+	}
+	.beneficios .media{
+		overflow: inherit;
+	}
+	.beneficios .media .media-left{
+		vertical-align: middle;
+	    margin-bottom: 20px;
+	    margin: 0 auto 20px;
+	    text-align: center;
+	}
+	.contacto h1{
+		font-size: 28px;
+		text-align: center;
+	}
+	#myLogin .cont-login {
+	    width: 85%;
+	}
+	.tabs .nav-tabs>li>a{
+		font-size: 11px;
+		padding-left: 0px;
+    	padding-right: 0px;
+	}
+	.main-slider img {
+	    width: 270%;
+	    max-width: inherit;
+	}
+	.main-slider .text{
+		padding: 150px 15px 0px;
+	}
+	.bg-contact .project figure .project-category{
+		bottom: initial;
+	    top: 160px;
+	    font-size: 14px;
+	}
+	.video .bx-wrapper img{
+		width: 158%;
+		max-width: inherit;
+	}
+	.video .media{
+		margin-top: 0px;
+	}
+	.video{
+		height: inherit;
+	}
+	.video .media .media-left img{
+		width: 70px;
+	}
+	.video .media .media-body h4{
+		font-size: 22px;
+		margin-top: 0px;
+	}
+	#widget-flow-vc{
+		bottom: 6px;
+	}
+	 #slideModal .close{
+	 	font-size: 28px;
+	 }
+	#myModal  .close{
+		top: 50px;
+		font-size: 36px;
+	}
+}
+@media (max-width: 320px){
+	.detalle .media-left{
+		padding-right: 15px;
+	}
+	.detalle .media-left img{
+		max-width: 50px;
+	}
+	footer h6 {
+	    font-size: 13px;
+	    line-height: inherit;
+	    padding-top: 54px;
+	}
+	.main-slider img {
+	    width: 320%;
+	    max-width: inherit;
+	}
+	.information .detail-list li{
+		font-size: 15px;
+	}
+	.video .bx-wrapper img{
+		width: 208%;
+		max-width: inherit;
+	}
+	.products .project-title{
+		font-size: 20px;
+	}
+}

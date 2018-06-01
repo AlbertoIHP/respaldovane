@@ -1,0 +1,62 @@
+
+$(document).ready(function(){
+	
+	
+	var $body = $('body');
+	var $navbar = $('.navbar-default');
+	var $offsetY = $navbar.offset().top + 10;
+	var $modalBackdropDiv = $('<div class="modal-backdrop fade in"></div>');
+
+	// Fixed Nav after scroll
+    document.onscroll = scroll;
+      
+	function scroll() {
+		if ($(window).scrollTop() >= $offsetY) {
+			$navbar.addClass('menu-fixed').css('background-color', 'rgba(255,254,253,1)');
+			
+		} else {
+			$navbar.removeClass('menu-fixed').css('background-color', 'rgba(255,254,253,1)');
+		}
+	}
+	
+	$(".banners").owlCarousel({
+		pagination: true,
+		slideSpeed: 1000,
+		items: 1,
+		smartSpeed: 1000,
+		dots: true,
+    	navigation: true,
+		navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+		 responsive: {
+		 	1200: {
+		 		items: 1
+		 	}
+		 }
+	})
+	$(".owl-prev").html('<i class="fa fa-arrow-left"></i>');
+	$(".owl-next").html('<i class="fa fa-arrow-right"></i>');
+	$(".banner .owl-controls .owl-page:first-child ").html("1")
+	$(".banner .owl-controls .owl-page:nth-child(2) ").html("2")
+	$(".banner .owl-controls .owl-page:nth-child(3) ").html("3")
+
+	$(".testimonio").owlCarousel({
+		pagination: true,
+		slideSpeed: 1000,
+		items: 1,
+		responsive: {
+			1200: {
+				items: 1
+			},
+			1124: {
+				items: 1
+			},
+			600: {
+				items: 1
+			}
+		}
+	})
+	$(".testimonio .owl-controls .owl-page:first-child ").html('<img src="public/images/profile.png" alt="">')
+	$(".testimonio .owl-controls .owl-page:nth-child(2) ").html('<img src="public/images/profile.png" alt="">')
+	$(".testimonio .owl-controls .owl-page:nth-child(3) ").html('<img src="public/images/profile.png" alt="">')
+    
+});

@@ -1,0 +1,25 @@
+<section class="main-content">
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-userprof *ngIf="showUserProfile" [newsList]="newsList" [currentUser]="currentUser" [userToShow]="userToShow" [projects]="userProjects"
+          [meetings]="meetingList">
+    
+        </app-userprof>
+    
+        <app-mentorprof *ngIf="showMentorProfile" [newsList]="newsList" [currentUser]="currentUser" [userToShow]="userToShow" [experiences]="mentorExperiences"
+          [meetings]="meetingList">
+    
+        </app-mentorprof>
+    
+        <app-enterpriseprof *ngIf="showEnterpriseProfile" [newsList]="newsList" [currentUser]="currentUser" [userToShow]="userToShow"
+          [workers]="enterpriseWorkers" [meetings]="meetingList">
+    
+        </app-enterpriseprof>
+    
+      </div>
+    </div>
+ </div>
+</section>
+
+
